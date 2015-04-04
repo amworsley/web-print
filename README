@@ -1,0 +1,4 @@
+Simple web base printing page based on python CGI and static HTML referencing page
+
+  upload.py - python CGI script for uploading a file to /scratch2 directory
+  upload.html - HTML front end that references upload.py for uploading a file
