@@ -1,4 +1,7 @@
 Simple web base printing page based on python CGI and static HTML referencing page
 
   upload.py - python CGI script for uploading a file to /scratch2 directory
+  print.py - python CGI script for printing to the default printer using lpr command
+       handles an optional rotate button to use pdf90 to rotate the pdf before printing.
   upload.html - HTML front end that references upload.py for uploading a file
+  print.html - HTML front end that invokes print.py for printing
