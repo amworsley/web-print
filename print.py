@@ -9,6 +9,11 @@ form = cgi.FieldStorage()
 fileitem = form['file']
 out = None
 out_q = None
+out_rot = None
+rotate = False
+
+if 'rotate' in form:
+    rotate = True
 
 # Test if the file was uploaded
 if fileitem.filename:
@@ -25,6 +30,11 @@ if fileitem.filename:
             upfn = '/scratch2/' + fn
             open(upfn, 'wb').write(fileitem.file.read())
             message = 'The file "' + fn + '" was uploaded successfully'
+            if rotate:
+                rotfile = upfn + "-rot90"
+                out = subprocess.check_output(["pdf90", '--outfile', rotfile, upfn])
+                message = message + "\n Rotated to " + rotfile
+                os.rename(rotfile, upfn)
             out = subprocess.check_output(["lpr", upfn])
             out_q = subprocess.check_output(["lpq"])
         else:
