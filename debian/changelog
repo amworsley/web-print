@@ -1,6 +1,7 @@
 web-misc (0.0.6) testing; urgency=medium
 
   * Move html files up one level to /usr/share/web-misc and enable indexing
+  * Switch configuration to Require directives from deprecated Allow/Deny
 
  -- Andrew Worsley <amworsley@gmail.com>  Sat, 04 May 2019 18:59:15 +1000
 

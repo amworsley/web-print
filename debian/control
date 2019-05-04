@@ -10,6 +10,6 @@ Homepage: https://github.com/amworsley/web-print
 
 Package: web-misc
 Architecture: all
-Depends: ${misc:Depends}, apache2, python
+Depends: ${misc:Depends}, apache2 | httpd, python
 Description: miscellaneous cgi scripts and configuration files
  Provides web-misc-print to upload files for printing
