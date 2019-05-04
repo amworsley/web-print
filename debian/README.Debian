@@ -1,0 +1,34 @@
+After installing you need to ensure that 
+
+ 1. cgi modules is enabled
+
+  a2query -m cgid
+
+(or cgi) if not enable it with:
+  
+  a2enmod cgid
+
+ 2. cgi-bin configuration is enabled (usually is by default?)
+
+   a2query -c serve-cgi-bin
+
+Otherwise enable it with 
+
+   a2enconf serve-cgi-bin
+
+ 3. Edit the configuration file to allow the networks you to access
+the web-misc services installed. e.g. If your local trusted subnet
+is 10.0.0.0/8 uncomment the example given. Append others for other subnets
+  
+   vi /etc/apache2/conf-available/web-misc.conf
+
+ 4. Enable the web-misc configuration (installed into conf-available by default)
+
+Enable it with 
+
+   a2enconf web-misc
+
+Then restart apache2 daemon:
+        
+  systemctl restart apache2
+

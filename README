@@ -5,3 +5,6 @@ Simple web base printing page based on python CGI and static HTML referencing pa
        handles an optional rotate button to use pdf90 to rotate the pdf before printing.
   upload.html - HTML front end that references upload.py for uploading a file
   print.html - HTML front end that invokes print.py for printing
+
+Presently need a directory /scratch that is owned by www-daemon so it can write the
+uploaded files to it.
